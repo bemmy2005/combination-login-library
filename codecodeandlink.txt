@@ -1,0 +1,23 @@
+main link:
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Tutorial_local_library_website
+install app generator:
+npm install express-generator -g
+create a project:
+express name-of-ur-app --view=pug
+install nodemon:
+npm install --save-dev nodemon
+
+start the server
+SET DEBUG=express-locallibrary-tutorial:* & npm run devstart
+
+29.09.2018
+stopped here
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Displaying_data/Author_list_page
+
+https://pugjs.org/language/attributes.html
+
+https://dev.to/rkristelijn/simplest-login-app-using-express-session-gio
+
+https://scotch.io/tutorials/easy-node-authentication-setup-and-local
+
+https://github.com/rkristelijn/login/

@@ -1,0 +1,50 @@
+body
+  div(class='container-fluid')
+    div(class='row')
+      div(class='col-sm-2')
+        block sidebar
+          ul(class='sidebar-nav')
+
+              a(href='/catalog') Home
+              |
+              |
+              |
+              |
+              a(href='/catalog/books') Books
+              |
+              |
+              |
+              |
+              a(href='/catalog/authors') Authors
+              |
+              |
+              |
+              |
+              a(href='/catalog/genres') Genres
+              |
+              |
+              |
+              |
+              a(href='/catalog/bookinstances') Instances
+
+              hr
+              |
+              |
+              |
+              |
+              a(href='/catalog/author/create') New author
+              |
+              |
+              |
+              |
+              a(href='/catalog/genre/create') New genre
+              |
+              |
+              |
+              |
+              a(href='/catalog/book/create') New book
+              |
+              |
+              |
+              |
+              a(href='/catalog/bookinstance/create') New instance
