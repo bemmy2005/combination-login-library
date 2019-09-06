@@ -4,14 +4,25 @@ block content
   div.View.WelcomeView
     h1.Banner MyLocalLibraly
     div.Message
-      div.Title
-        h3 Making it easier for readers.
-        h1 Information resource for readers
+      div
+      h1 Information resource for readers
+      h2 Library status
+      ul
+        li #[strong Books:] !{data.book_count}
+        li #[strong Copies:] !{data.book_instance_count}
+        li #[strong Copies available:] !{data.book_instance_available_count}
+        li #[strong Authors:] !{data.author_count}
+        li #[strong Genres:] !{data.genre_count}
+      h3 Making it easier for readers.
       span.Details Access MyLocal-Library readers' Portal
   div.NavButtons
     if isAuthenticated
       a(href="/users")
         div.NavButton Just in!
     else
-      a(href="/login")
+      a(href='/catalog/user/login')
         div.NavButton Log in
+      |
+      |
+      a(href='/catalog/user/create')
+        div.NavButton register

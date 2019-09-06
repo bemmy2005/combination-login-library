@@ -6,7 +6,7 @@ var router = express.Router();
 //  res.render('index', { title: 'Express' });
 //});
 router.get('/', function(req, res) {
-  res.redirect('/catalog');
+  res.redirect('/index-library');
 });
 
 module.exports = router;

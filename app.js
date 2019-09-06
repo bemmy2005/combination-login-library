@@ -7,13 +7,13 @@ var logger = require('morgan');
 //begin for login
 var session = require("express-session");
 var debug = require("debug")("app.js");
-var indexRouter = require("./routes/index-login");
-var usersRouter = require("./routes/users");
-var aboutRouter = require("./routes/about");
+var indexRouterlogin = require("./routes/index-login");
+//var usersRouter = require("./routes/users");
+//var aboutRouter = require("./routes/about");
 //end for
 //import routes from their respective locations
-var indexRouter = require('./routes/index-library');
-var usersRouter = require('./routes/users');
+var indexRouterlibrary = require('./routes/index-library');
+//var usersRouter = require('./routes/users');
 var catalogRouter = require('./routes/catalog');  //Import routes for "catalog" area of site
 var compression = require('compression');
 var helmet = require('helmet');
@@ -57,56 +57,16 @@ app.use(
     // cookie: { maxAge: 6000 } /* 6000 ms? 6 seconds -> wut? :S */
   })
 );
-var logout = function(req, res, next) {
-  debug("logout()");
-  req.session.loggedIn = false;
-  res.redirect("/");
-};
-var login = function(err, req, res, next) {
-  var { username, password } = req.body;
-  if (req.body.username && checkUser(username, password)) {
-    debug("login()", username, password);
-    req.session.loggedIn = true;
-    res.redirect("/");
-  } else {
-    debug("login()", "Wrong credentials");
-    res.render("login", { title: "Login Here", error: "Wrong credentials" });
-  }
-};
-
-var checkUser = function(username, password) {
-  debug("checkUser()", username, password);
-  if (username === "admin" && password === "admin") return true;
-  return false;
-};
-
-var checkLoggedIn = function(err, req, res, next) {
-  if (req.session.loggedIn) {
-    debug(
-      "checkLoggedIn(), req.session.loggedIn:",
-      req.session.loggedIn,
-      "executing next()"
-    );
-    next();
-  } else {
-    debug(
-      "checkLoggedIn(), req.session.loggedIn:",
-      req.session.loggedIn,
-      "rendering login"
-    );
-    res.render("login", { title: "User login" });
-  }
-};
-
 // redirect to login form
-app.use("/users", checkLoggedIn, usersRouter);
-app.use("/logout", logout, indexRouter);
-app.use("/login", login, indexRouter);
-app.use("/about", aboutRouter);
-app.use("/", checkLoggedIn, indexRouter);
+//.use("/users", checkLoggedIn, usersRouter);
+//app.use("/logout", logout, indexRouter);
+//app.use("/login", login, indexRouter);
+//app.use("/about", aboutRouter);
+//app.use("/", checkLoggedIn, indexRouter);
 //end for loggedIn
 //middleware chain
-//app.use('/', indexRouter);//cause of login
+app.use('/', indexRouterlibrary);//cause of login
+app.use('/index-login',indexRouterlogin);
 //app.use('/users', usersRouter);//cuase of login
 //app.use('/users/cool', usersRouter);
 app.use('/catalog', catalogRouter);  // Add catalog routes to middleware chain.
