@@ -31,7 +31,7 @@
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "copy-files-from-to": "^2.0.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "nodemon": "^1.19.2",
     "popper.js": "^1.15.0"
   }
