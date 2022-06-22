@@ -8,7 +8,7 @@
     "ui": "browser-sync start --proxy=localhost:8000 --files='**/*.css, **/*.pug, **/*.js' --ignore=node_modules --reload-delay 10 --no-ui --no-notify"
   },
   "dependencies": {
-    "async": "^3.1.0",
+    "async": "^3.2.2",
     "compression": "^1.7.4",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
